@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="Calculator.css"/>
+</head>
+<body>
+ <h1>CALCULATOR</h1>
+    <div class="container">
+<input  type="text " placeholder="0" id="output-screen"/>
+<button onclick="clr()">C</button>
+<button onClick="del()">DEL</button>
+<button onclick="dis('%')">%</button>
+<button onclick="power('on'/'off')">OFF/ON</button>
+<button onclick="dis('7')">7</button>
+<button onclick="dis('8')">8</button>
+<button onclick="dis('9')">9</button>
+<button onclick="dis('/')">/</button>
+<button onclick="dis('4')">4</button>
+<button onclick="dis('5')">5</button>
+<button onclick="dis('6')">6</button>
+<button onclick="dis('*')">*</button>
+<button onclick="dis('1')">1</button>
+<button onclick="dis('2')">2</button>
+<button onclick="dis('3')">3</button>
+<button onclick="dis('-')">-</button>
+<button onclick="dis('.')">.</button>
+<button onclick="dis('0')">0</button>
+<button onclick="dis('+')">+</button>
+<button onclick="calculate()" >=</button>
+    </div>
+
+<script>
+ let outputscreen= document.getElementById("output-screen");
+ function dis(num){
+outputscreen.value+=num
+   }
+   function calculate(){
+try{
+    outputscreen.value=eval(outputscreen.value);
+}
+catch(err){
+    alert("invalid")
+}
+   }
+function clr(){
+    document.getElementById("output-screen").value="";
+}
+function del(){
+   outputscreen.value=outputscreen.value.slice(0,-1);
+}
+</script>
+</body>
+</html>
